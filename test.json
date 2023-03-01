@@ -1,0 +1,49 @@
+{
+  "study": {
+    "theme": "Study - учеба",
+    "test":{
+        "a school": {
+        "true": "Школа",
+        "f1": "Университет",
+        "f2": "Колледж",
+        "f3": "Учитель",
+        "example": "example school"
+      },
+      "a college": {
+        "true": "Колледж",
+        "f1": "Университет",
+        "f2": "Школа",
+        "f3": "Студент",
+        "example": "example college"
+      },
+      "to teach": {
+        "true": "Учить",
+        "f1": "Учитель",
+        "f2": "Писать",
+        "f3": "Книга",
+        "example": "example teach"
+      },
+      "a notebook": {
+        "true": "Тетрадь",
+        "f1": "Ноутбук",
+        "f2": "Словарь",
+        "f3": "Книга",
+        "example": "example notebook"
+      },
+      "a lesson": {
+        "true": "Урок",
+        "f1": "Тема",
+        "f2": "Лекция",
+        "f3": "Ученик",
+        "example": "example notebook"
+      },
+      "a pen": {
+        "true": "Урок",
+        "f1": "Тема",
+        "f2": "Лекция",
+        "f3": "Ученик",
+        "example": "example notebook"
+      }
+    }
+  }
+}
