@@ -14,7 +14,7 @@ json = initTest()  # загрузка теста из json файла
 test = json
 #dev temp
 testInd = []
-countWords = 5
+countWords = 7
 count = 0
 currentWord = ""
 
@@ -68,6 +68,7 @@ def startTest(message):
       bot.send_message(message.chat.id,
                        f'Перевод слова "{keys}"',
                        reply_markup=testInlineKeyboard(test[keys]))
+      # test.pop(keys)
       count += 1
       testInd.append(keys)
       break
@@ -82,7 +83,7 @@ def endTest(call=None):
 def checkFinishTest(message):
   if count == countWords:
     endTest()
-    bot.send_message(message.chat.id, text="❌ Тест завершен", reply_markup=menuKeyboard())
+    bot.send_message(message.chat.id, text="❎ Тест завершен", reply_markup=menuKeyboard())
   else:
     startTest(message)
 
@@ -117,7 +118,8 @@ def callback_inline(call):
 def controller_msg(message):
   global test, count, currentWord
   if (message.text == menuItems[0]):
-    bot.send_message(message.chat.id, "Удачи💕", reply_markup=None)
+    # bot.send_message(message.chat.id, "Удачи💕", reply_markup=None)
+    bot.send_message(message.chat.id, "Удачи🍀", reply_markup=None)
     test = json["study"]["test"]
     startTest(message)
   elif (message.text == menuItems[1]):

@@ -38,10 +38,17 @@
         "example": "example notebook"
       },
       "a pen": {
-        "true": "Урок",
-        "f1": "Тема",
-        "f2": "Лекция",
-        "f3": "Ученик",
+        "true": "Ручка",
+        "f1": "Карандаш",
+        "f2": "Ошибка",
+        "f3": "Линейка",
+        "example": "example notebook"
+      },
+      "a pencil": {
+        "true": "Карандаш",
+        "f1": "Ручка",
+        "f2": "Тетрадь",
+        "f3": "Линейка",
         "example": "example notebook"
       }
     }
