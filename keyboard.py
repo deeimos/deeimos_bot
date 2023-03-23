@@ -4,7 +4,8 @@ from random import random
 
 menuItems = ["▶️ Начать тест", "📊 Статистика", "🛠 Параметры"]
 paramItems = [
-  "Изменить тему изучения", "Изменить количество слов в тесте", "Повтор слов"
+  "Изменить тему изучения", "Изменить количество слов в тесте",
+  "Изменить количество правильных ответов для запоминания слова"
 ]
 menuTestItems = ["❓Пример использования слова❓", "⛔️Завершить тест⛔️"]
 
@@ -12,11 +13,13 @@ menuTestItems = ["❓Пример использования слова❓", "�
 def initTest():
   with open(r'./test.json', 'r') as jsonRequest:
     request = json.load(jsonRequest)
-  return (request) 
+  return (request)
+
 
 def menuKeyboard():
-  keyboard = types.ReplyKeyboardMarkup(
-    row_width=1, resize_keyboard=True, one_time_keyboard=True)
+  keyboard = types.ReplyKeyboardMarkup(row_width=1,
+                                       resize_keyboard=True,
+                                       one_time_keyboard=True)
   buttonStartTest = types.KeyboardButton(text=menuItems[0])
   buttonShowStat = types.KeyboardButton(text=menuItems[1])
   buttonParams = types.KeyboardButton(text=menuItems[2])
@@ -28,14 +31,40 @@ def menuKeyboard():
 # Параметры
 def paramsKeyboard():
   keyboard = types.InlineKeyboardMarkup()
-  changeTheme = types.InlineKeyboardButton(paramItems[0], callback_data='a')
-  countWords = types.InlineKeyboardButton(paramItems[1], callback_data='b')
-  repeatWords = types.InlineKeyboardButton(paramItems[2], callback_data='c')
+  changeTheme = types.InlineKeyboardButton(paramItems[0],
+                                           callback_data='changeTheme')
+  countWords = types.InlineKeyboardButton(paramItems[1],
+                                          callback_data='changeCountWords')
+  repeatWords = types.InlineKeyboardButton(paramItems[2],
+                                           callback_data='changeCountRepeat')
   keyboard.row(changeTheme)
   keyboard.row(countWords)
   keyboard.row(repeatWords)
   return keyboard
 
+
+def changeCountKeyboard(lenKeysList, flag):
+  keyboard = types.InlineKeyboardMarkup()
+  for i in range(lenKeysList):
+    keyboard.add(
+      types.InlineKeyboardButton(str(i + 1), callback_data=flag + str(i + 1)))
+  keyboard.add(types.InlineKeyboardButton("Отмена", callback_data='cancel'))
+  return (keyboard)
+
+def changeThemeTest():
+  keyboard = types.InlineKeyboardMarkup()
+  json = initTest()
+  themesTest = json.values()
+  for iter in themesTest:
+    themeName = 0
+    for keys in json:
+      if json[keys] == iter:
+        themeName = keys
+        break
+    keyboard.add(types.InlineKeyboardButton(iter["theme"], callback_data=keys))
+  keyboard.add(types.InlineKeyboardButton("Отмена", callback_data='cancel'))
+  return (keyboard)
+  
 
 def testInlineKeyboard(question):
   keyboard = types.InlineKeyboardMarkup(row_width=1)

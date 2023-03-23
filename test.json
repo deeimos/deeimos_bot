@@ -52,5 +52,80 @@
         "example": "example notebook"
       }
     }
+  },
+  "family": {
+    "theme": "Family - семья",
+    "test":{
+      "parents": {
+        "true": "Родители",
+        "f1": "Семья",
+        "f2": "Братья",
+        "f3": "Сестры",
+        "example": "example parents"
+      },
+      "a father": {
+        "true": "Отец",
+        "f1": "Мать",
+        "f2": "Брат",
+        "f3": "Сестра",
+        "example": "example a father"
+      },
+      "a mather": {
+        "true": "Мать",
+        "f1": "Отец",
+        "f2": "Брат",
+        "f3": "Сестра",
+        "example": "example a mather"
+       },
+      "a husband": {
+        "true": "Муж",
+        "f1": "Жена",
+        "f2": "Отец",
+        "f3": "Мать",
+        "example": "example a husband"
+      },
+      "a wife": {
+        "true": ":Жена",
+        "f1": "Муж",
+        "f2": "Отец",
+        "f3": "Мать",
+        "example": "example a wife"
+      },
+      "a son": {
+        "true": "Сын",
+        "f1": "Дочь",
+        "f2": "Солнце",
+        "f3": "Брат",
+        "example": "example a son"
+      },
+      "a daughter": {
+        "true": "Дочь",
+        "f1": "Сын",
+        "f2": "Жена",
+        "f3": "Брат",
+        "example": "example a daughter"
+      },
+      "a brother": {
+        "true": "Брат",
+        "f1": "Сын",
+        "f2": "Родитель",
+        "f3": "Родственик",
+        "example": "example a brother"
+      },
+      "a granfather": {
+        "true": "Дедушка",
+        "f1": "Бабушка",
+        "f2": "Родитель",
+        "f3": "Родственик",
+        "example": "example a granfather"
+      },
+      "a grandmother": {
+        "true": "Бабушка",
+        "f1": "Дедушка",
+        "f2": "Мать",
+        "f3": "Родственик",
+        "example": "example a grandmother"
+      }
+    }
   }
 }
